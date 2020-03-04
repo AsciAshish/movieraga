@@ -28,7 +28,7 @@ if not os.getenv("SECRET_KEY"):
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',
@@ -136,8 +136,10 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Extra places for collectstatic to find static files.
+STATIC_FILES = os.path.join(BASE_DIR, 'movieraga', 'static')
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'movieraga', 'static'),
+    STATIC_FILES,
 ]
 
 
