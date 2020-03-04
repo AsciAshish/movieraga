@@ -136,8 +136,10 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Extra places for collectstatic to find static files.
+STATIC_FILES = os.path.join(BASE_DIR, 'movieraga', 'static')
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'movieraga', 'static'),
+    STATIC_FILES,
 ]
 
 
